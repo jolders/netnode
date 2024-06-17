@@ -1,0 +1,194 @@
+/* Setting a style */
+QWidget {
+        background-color: "gainsboro";
+}
+/* --------------------------------------- Style the BUTTONS --------------------------------------- */
+QPushButton#btn_create, QPushButton#btn_update, QPushButton#btn_delete {
+    color: "black"; /* Button Text */
+    background-color: "powderblue";
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: "lightslategrey";
+    border-style: solid;
+}
+QPushButton::hover#btn_create, QPushButton::hover#btn_update, QPushButton::hover#btn_delete {
+    color: "white"; /* Button Text */
+    background-color: "lightslategrey";
+    border-color: "powderblue";
+    font-weight:bold;
+}
+
+QPushButton#btn_exit {
+    color: "black"; /* Button Text */
+    background-color: "orange";
+    padding: 8px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: "red";
+    border-style: solid;
+    width:100px;
+    height:10px;
+}
+QPushButton::hover#btn_exit {
+    color: "white"; /* Button Text */
+    background-color: "red";
+    border-color: "orange";
+    border-width: 0px;
+    font-weight:bold;
+}
+
+/* TRY TO TARGET THE DIALOG */
+
+
+/* --------------------------------------- TABLE SCROLLBAR  -----------------------------------*/
+QTableView {
+    gridline-color: "orange";
+    background-color: "blanchedalmond";
+    border-color: "darkgrey";
+    padding: 1px;
+}
+/* Header style */
+QHeaderView::section {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: "cadetblue";
+    color: white;
+    height: 25px;
+    /* width: 150px; */
+    font: 14px;
+}
+QTableView::item:selected {
+    /* row selected  Green */
+    background-color: "darkseagreen";
+}
+/* --------------------------------------- VERTICAL SCROLLBAR  -----------------------------------*/
+QScrollBar {
+    background-color: "powderblue";
+    width: 16px;
+    border: none;
+}
+QScrollBar::handle {
+    background-color: "lightslategrey";
+    margin: 16px 1px 16px 1px;
+    border-radius: 6px;
+}
+
+QStatusBar {
+        background: "silver";
+        border-top: 1px solid "darkgrey";
+}
+QStatusBar, QStatusBar QLabel {
+        color: "white";
+}
+QSizeGrip {
+    /*image: url(:/qss_icons/rc/sizegrip.png);*/
+    width: 20px;
+    height: 20px;
+    background-color: "powderblue";
+}
+
+
+
+
+
+
+
+/*
+            QScrollBar:vertical {
+                border: none;
+                background: rgb(45, 45, 68);
+                width: 14px;
+                margin: 15px 0 15px 0;
+                border-radius: 0px;
+            }
+            /*  HANDLE BAR VERTICAL */
+
+/*
+            QScrollBar::handle:vertical {
+                background-color: rgb(80, 80, 122);
+                min-height: 30px;
+                border-radius: 7px;
+            }
+            QScrollBar::handle:vertical:hover {
+                background-color: rgb(255, 0, 127);
+            }
+            QScrollBar::handle:vertical:pressed {
+                background-color: rgb(185, 0, 92);
+            }
+ /*
+            /* BTN TOP - SCROLLBAR */
+ /*
+            QScrollBar::sub-line:vertical {
+                border: none;
+                background-color: rgb(59, 59, 90);
+                height: 15px;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+                subcontrol-position: top;
+                subcontrol-origin: margin;
+            }
+            QScrollBar::sub-line:vertical:hover {
+                background-color: rgb(255, 0, 127);
+            }
+            QScrollBar::sub-line:vertical:pressed {
+                background-color: rgb(185, 0, 92);
+            }
+*/
+            /* BTN BOTTOM - SCROLLBAR */
+/*
+            QScrollBar::add-line:vertical {
+                border: none;
+                background-color: rgb(59, 59, 90);
+                height: 15px;
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
+                subcontrol-position: bottom;
+                subcontrol-origin: margin;
+            }
+            QScrollBar::add-line:vertical:hover {
+                background-color: rgb(255, 0, 127);
+            }
+            QScrollBar::add-line:vertical:pressed {
+                background-color: rgb(185, 0, 92);
+            }
+
+
+/* RESET ARROW  vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+            QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+                background: none;
+            }
+            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+                background: none;
+            }
+
+QDialogButtonBox > QPushButton[text="OK"]{
+    color: "dimgrey";
+    background-color: "green";
+    padding: 15px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: "lightslategrey";
+    border-style: solid;
+}
+QDialogButtonBox > QPushButton[text="Cancel"]{
+    color: "black";
+    background-color: "yellow";
+    padding: 15px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: "lightslategrey";
+    border-style: solid;
+}
+QDialogButtonBox QPushButton{
+  color:rgb(0,0,0);
+  height:80px;
+  font-size:20px;
+  padding:10px;
+  width:100px;
+  font-weight:bold;
+  background-color: rgb(237, 212, 0);
+  border-radius: 8px;
+}
+
+*/

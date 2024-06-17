@@ -1,0 +1,53 @@
+/* Setting a style */
+.heading {
+    font-size: 30px;
+    color: "red";
+    }
+QWidget {   background-color: "LightSteelBlue";
+            color: "white";}
+QLineEdit { background-color: "purple";}
+QLineEdit:focus {background-color: rgb(70, 148, 249);}
+
+QPushButton {
+    background-color: "DimGrey";
+    font-size: 16px;
+    padding: 5px 10px;
+}
+QPushButton:hover {
+    background-color: "Gray";
+    font-size: 17px;
+    color: "white";
+    }
+QPushButton:focus {
+    background-color: "silver";
+    font-size: 17px;
+    color: "white";
+    }
+
+/* Setting a style for QTableView */
+
+QTableView { gridline-color: "orange";
+        background-color: "khaki";
+        border-color: rgb(242, 128, 133);
+        padding: 1px;
+        }
+QHeaderView {background-color: "yellow";
+    }
+
+QHeaderView::section {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: rgb(71, 153, 176);
+    color: white;
+    height: 35px;
+    /* width: 150px; */
+    font: 14px;
+}
+QTableView::item:selected {
+    /* row selected */
+    background-color: rgb(128, 0, 128);
+}
+QTableView::item {
+    /* row selected */
+    padding: 15px;
+}

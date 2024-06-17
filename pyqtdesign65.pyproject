@@ -1,0 +1,15 @@
+{
+    "files": [
+        "main.py",
+        "mainWindow.ui",
+        "createUpdateWindow.py",
+        "mainWindow.py",
+        "createUpdateWindow.ui",
+        "sqlConnection.py",
+        "deleteDialog.ui",
+        "styles.css",
+        "style_dracula.css",
+        "mystyle.css",
+        "testui.ui"
+    ]
+}
