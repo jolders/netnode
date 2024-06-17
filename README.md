@@ -5,8 +5,7 @@ SQLITE3 for saving device details usernames password ipaddress location descript
 
 ## Description
 
-1). This is intended as a starting point for how to intergrate Python, 
-PySide6 using  and 
+This is a starting point for how to intergrate Python, PySide6, SQLITE3, QT Creator. 
 
 ### Project aims
 
@@ -20,5 +19,3 @@ PySide6 using  and
 <div align="center"> 
   <img src="https://github.com/jolders/netnode/blob/main/netnode_screenshot.png" alt="screenshot" />
 </div>
-
-
