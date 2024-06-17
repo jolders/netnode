@@ -7,9 +7,8 @@ from mainWindow import MainWindow
 
 if __name__ == "__main__":
     app = qtw.QApplication(sys.argv)
-    with open("mystyle.css", "r") as file:
-        app.setStyleSheet(file.read())
-    #with open("style_dracula.css", "r") as file:
+    # Stylesheet option disengaged at the moment
+    #with open("mystyle.css", "r") as file:
     #    app.setStyleSheet(file.read())
     app.setStyle('Fusion')
     mainw = MainWindow()

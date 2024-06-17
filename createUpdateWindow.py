@@ -130,7 +130,14 @@ class DeleteDialog(qtw.QDialog, Ui_Dialog):
         self.uid = Ui_Dialog()
         self.uid.setupUi(self)
 
-        self.uid.lbl_id.setText(id)
+        self.uid.lbl_idresult.setText(id)
+        self.uid.lbl_hostnameresult.setText(hostname)
+        self.uid.lbl_ipaddressresult.setText(ipaddress)
+        self.uid.lbl_usernameresult.setText(username)
+        self.uid.lbl_passwordresult.setText(password)
+        self.uid.lbl_locationresult.setText(location)
+        self.uid.lbl_descriptionresult.setText(description)
+
 
         self.uid.buttonBox.accepted.connect(lambda : self.btn_accepted_clicked(id))
         #self.uid.buttonBox.rejected.connect(Dialog.reject)

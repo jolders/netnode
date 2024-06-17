@@ -13,6 +13,109 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: rgb(80, 90, 10);
+}
+QWidget {
+        background-color: &quot;gainsboro&quot;;
+}
+
+/* --------------------------------------- Style the BUTTONS --------------------------------------- */
+QPushButton#btn_create, QPushButton#btn_update, QPushButton#btn_delete {
+    color: &quot;black&quot;; /* Button Text */
+    background-color: &quot;powderblue&quot;;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: &quot;lightslategrey&quot;;
+    border-style: solid;
+}
+QPushButton::hover#btn_create, QPushButton::hover#btn_update, QPushButton::hover#btn_delete {
+    color: &quot;white&quot;; /* Button Text */
+    background-color: &quot;lightslategrey&quot;;
+    border-color: &quot;powderblue&quot;;
+    font-weight:bold;
+}
+
+QPushButton#btn_exit {
+    color: &quot;black&quot;; /* Button Text */
+    background-color: &quot;orange&quot;;
+    padding: 8px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: &quot;red&quot;;
+    border-style: solid;
+    width:100px;
+    height:10px;
+}
+QPushButton::hover#btn_exit {
+    color: &quot;white&quot;; /* Button Text */
+    background-color: &quot;red&quot;;
+    border-color: &quot;orange&quot;;
+    border-width: 0px;
+    font-weight:bold;
+}
+/* --------------------------------------- TABLE  -----------------------------------*/
+QTableView {
+    gridline-color: &quot;orange&quot;;
+    background-color: &quot;blanchedalmond&quot;;
+    border-color: &quot;darkgrey&quot;;
+    padding: 1px;
+}
+/* Header style */
+QHeaderView::section {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: &quot;cadetblue&quot;;
+    color: white;
+    height: 25px;
+    /* width: 150px; */
+    font: 14px;
+}
+QTableView::item:selected {
+    /* row selected  Green */
+    background-color: &quot;darkseagreen&quot;;
+}
+QScrollBar {
+    background-color: &quot;powderblue&quot;;
+    width: 16px;
+    border: none;
+}
+QScrollBar::handle {
+    background-color: &quot;lightslategrey&quot;;
+    margin: 16px 1px 16px 1px;
+    border-radius: 6px;
+}
+
+QStatusBar {
+        background: &quot;silver&quot;;
+        border-top: 1px solid &quot;darkgrey&quot;;
+}
+QStatusBar, QStatusBar QLabel {
+        color: &quot;white&quot;;
+}
+QSizeGrip {
+    /*image: url(:/qss_icons/rc/sizegrip.png);*/
+    width: 20px;
+    height: 20px;
+    background-color: &quot;powderblue&quot;;
+}
+
+/* --------------------------------------- TABLE  -----------------------------------*/
+QStatusBar {
+        background: rgb(85, 85, 127);
+        border-top: 1px solid #6272a4;
+}
+QStatusBar, QStatusBar QLabel {
+        color: #8be9fd;
+}
+QStatusBar QLabel {
+        padding-left: .1ex;
+}
+
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
