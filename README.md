@@ -10,9 +10,9 @@ PySide6 using  and
 
 ### Project aims
 
-* Develop a 'workflow' starting point for how to intergrate Python
-* Continue to learn Python
-* SBecome better able to work with QT Creator/Designer as the UI development
+* Develop a 'workflow' starting point for how to intergrate Python with UI.
+* Advance further in my abilities to use Python.
+* Become more comfortable in working with QT Creator/Designer as the UI development
 
 <!-- Screenshots -->
 ### :camera: Screenshots
