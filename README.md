@@ -20,5 +20,8 @@ PySide6 using  and
 <div align="center"> 
   <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
 </div>
+<div align="center"> 
+  <img src="https://github.com/jolders/netnode/blob/main/netnode_screenshot.png" alt="screenshot" />
+</div>
 
 
