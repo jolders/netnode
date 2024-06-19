@@ -107,24 +107,27 @@ class SqlDataConnection:
         sql_query = "INSERT INTO devices (Hostname, IPaddress, Username, Password, Location, Description) VALUES (?, ?, ?, ?, ?, ?)"
         self.execute_query_with_params(sql_query, [hostname, ipaddress, username, password, location, description])
 
-    def update_device(self, new_hostname, new_ipaddress, new_username, new_password, new_location, new_description, id):
+    def update_device(self, new_hostname, new_ipaddress, new_username, new_password, new_location, pte_description, id):
         query = QtSql.QSqlQuery()
-        sql_query = f"UPDATE devices SET Hostname={new_hostname}, IPaddress={new_ipaddress}, Username={new_username}, Password={new_password}, Location={new_location}, Description={new_description} WHERE ID={id}"
+        sql_query = f"UPDATE devices SET Hostname='{new_hostname}', IPaddress='{new_ipaddress}', Username='{new_username}', Password='{new_password}', Location='{new_location}', Description='{pte_description}' WHERE ID='{id}'"
+
+        print(sql_query)
         query.prepare(sql_query)
         query.exec()
         #sql_query = "UPDATE devices SET Hostname=?, IPaddress=?, Username=?, Password=?, Location=?, Description=? WHERE ID=?"
         #self.execute_query_with_params(sql_query, [hostname, ipaddress, username, password, location, description, id])
 
-    def create_new_device(self, hostname, ipaddress, username, password, location, description):
+    def create_new_device(self, hostname, ipaddress, username, password, location, pte_description):
         print(f"create_new_device Hostname is: {hostname}")
         print(f"create_new_device ipaddress is: {ipaddress}")
         print(f"create_new_device username is: {username}")
         print(f"create_new_device password is: {password}")
         print(f"create_new_device location is: {location}")
-        print(f"create_new_device description is: {description}")
+        #print(f"create_new_device description is: {description}")
+        print(f"create_new_device description is: {pte_description}")
 
         query = QtSql.QSqlQuery()
-        sql_query = f"INSERT INTO devices (Hostname, IPaddress, Username, Password, Location, Description) VALUES ('{hostname}', '{ipaddress}', '{username}', '{password}', '{location}', '{description}')"
+        sql_query = f"INSERT INTO devices (Hostname, IPaddress, Username, Password, Location, Description) VALUES ('{hostname}', '{ipaddress}', '{username}', '{password}', '{location}', '{pte_description}')"
         query.prepare(sql_query)
         query.exec()
 

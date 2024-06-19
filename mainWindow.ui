@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
-	background-color: rgb(80, 90, 10);
+	background-color: &quot;silver&quot;;
 }
 QWidget {
         background-color: &quot;gainsboro&quot;;
@@ -88,30 +88,19 @@ QScrollBar::handle {
     border-radius: 6px;
 }
 
+/* --------------------------------------- Status Bar  -----------------------------------*/
 QStatusBar {
         background: &quot;silver&quot;;
-        border-top: 1px solid &quot;darkgrey&quot;;
+        border-top: 2px solid &quot;gray&quot;;
 }
 QStatusBar, QStatusBar QLabel {
-        color: &quot;white&quot;;
+        color: &quot;black&quot;;
 }
 QSizeGrip {
-    /*image: url(:/qss_icons/rc/sizegrip.png);*/
+    image: url(window_grip.svg);
     width: 20px;
     height: 20px;
-    background-color: &quot;powderblue&quot;;
-}
-
-/* --------------------------------------- TABLE  -----------------------------------*/
-QStatusBar {
-        background: rgb(85, 85, 127);
-        border-top: 1px solid #6272a4;
-}
-QStatusBar, QStatusBar QLabel {
-        color: #8be9fd;
-}
-QStatusBar QLabel {
-        padding-left: .1ex;
+    background-color: &quot;silver&quot;;
 }
 
 </string>

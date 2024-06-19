@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>386</width>
-    <height>596</height>
+    <width>455</width>
+    <height>718</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -61,13 +61,40 @@ QWidget QPushButton#btn_submit {
     height:20px;
 }
 /* --------------------------------------- Line Edits  -----------------------------------*/
-QLineEdit { background-color:rgb(202, 255, 227);
-border: 1px solid gray;
-border-radius: 5px;
-padding: 0 8px;
-selection-background-color: &quot;darkgray&quot;;
+QLineEdit { 
+	background-color:rgb(202, 255, 227);
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 0 8px;
+	selection-background-color: &quot;darkgray&quot;;
 }
-QLineEdit:focus { background-color:rgb(192, 192, 255);}
+QLineEdit:focus {
+	background-color:rgb(192, 192, 255);
+}
+/* --------------------------------------- Plain Text Edit box  -----------------------------------*/
+QPlainTextEdit {
+	background-color:rgb(202, 255, 227);
+	border: 1px solid gray;
+	padding: 0 8px;
+	border-top-left-radius: 10px; /* same radius as the QComboBox */
+border-top-right-radius: 10px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 10px;    
+border-bottom-left-radius: 10px;
+}
+QPlainTextEdit:focus {
+	background-color:rgb(192, 192, 255);
+}
+/* --------------------------------------- QScrollBar  -----------------------------------*/
+QScrollBar {
+    background-color: &quot;powderblue&quot;;
+    width: 16px;
+    border: none;
+}
+QScrollBar::handle {
+    background-color: &quot;lightslategrey&quot;;
+    margin: 16px 1px 16px 1px;
+    border-radius: 6px;
+}
 
 
 
@@ -458,7 +485,7 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,1">
+        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
          <item>
           <widget class="QLabel" name="lbl_description">
            <property name="maximumSize">
@@ -490,24 +517,15 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_description">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <widget class="QPlainTextEdit" name="pte_description">
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>230</width>
-             <height>35</height>
-            </size>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
-           <property name="font">
-            <font>
-             <family>Noto Sans</family>
-             <pointsize>12</pointsize>
-            </font>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
            </property>
           </widget>
          </item>

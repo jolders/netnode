@@ -15,15 +15,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLayout,
-    QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QHBoxLayout, QLabel,
+    QLayout, QLineEdit, QPlainTextEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 
 class Ui_createUpdate(object):
     def setupUi(self, createUpdate):
         if not createUpdate.objectName():
             createUpdate.setObjectName(u"createUpdate")
-        createUpdate.resize(386, 596)
+        createUpdate.resize(455, 718)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -69,13 +69,41 @@ class Ui_createUpdate(object):
 "    height:20px;\n"
 "}\n"
 "/* --------------------------------------- Line Edits  -----------------------------------*/\n"
-"QLineEdit { background-color:rgb(202, 255, 227);\n"
-"border: 1px solid gray;\n"
-"border-radius: 5px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: \"darkgray\";\n"
+"QLineEdit { \n"
+"	background-color:rgb(202, 255, 227);\n"
+"	border: 1px solid gray;\n"
+"	border-radius: 5px;\n"
+"	padding: 0 8px;\n"
+"	selection-background-color: \"darkgray\";\n"
 "}\n"
-"QLineEdit:focus { background-color:rgb(192, 192, 255);}\n"
+"QLineEdit:focus {\n"
+"	background-color:rgb(192, 192, 255);\n"
+"}\n"
+"/* --------------------------------------- Plain Text Edit box  -----------------------------------*/\n"
+"QPlainTextEdit {\n"
+"	background-color:rgb(202, 255, 227);\n"
+"	border: 1px solid gray;\n"
+"	padding: 0 8px;\n"
+"	border-top-left-radius: 10px; /* same radius as the QComboBox */\n"
+"border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"    border-bottom-right-radius: 10px;    \n"
+"border-bottom-left-radius: 10px;\n"
+"}\n"
+"QPlainTextEdit:focus {\n"
+"	background-color:rgb(192, 192, 255);\n"
+"}\n"
+"/* --------------------------------------- QScrollBar  ------------------------"
+                        "-----------*/\n"
+"QScrollBar {\n"
+"    background-color: \"powderblue\";\n"
+"    width: 16px;\n"
+"    border: none;\n"
+"}\n"
+"QScrollBar::handle {\n"
+"    background-color: \"lightslategrey\";\n"
+"    margin: 16px 1px 16px 1px;\n"
+"    border-radius: 6px;\n"
+"}\n"
 "\n"
 "\n"
 "\n"
@@ -276,16 +304,14 @@ class Ui_createUpdate(object):
 
         self.horizontalLayout_7.addWidget(self.lbl_description)
 
-        self.le_description = QLineEdit(createUpdate)
-        self.le_description.setObjectName(u"le_description")
-        sizePolicy2.setHeightForWidth(self.le_description.sizePolicy().hasHeightForWidth())
-        self.le_description.setSizePolicy(sizePolicy2)
-        self.le_description.setMaximumSize(QSize(230, 35))
-        self.le_description.setFont(font1)
+        self.pte_description = QPlainTextEdit(createUpdate)
+        self.pte_description.setObjectName(u"pte_description")
+        self.pte_description.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.pte_description.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.pte_description.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
 
-        self.horizontalLayout_7.addWidget(self.le_description)
+        self.horizontalLayout_7.addWidget(self.pte_description)
 
-        self.horizontalLayout_7.setStretch(1, 1)
 
         self.verticalLayout.addLayout(self.horizontalLayout_7)
 
