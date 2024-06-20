@@ -270,7 +270,7 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Delete window", None))
         self.lbl_title.setText(QCoreApplication.translate("Dialog", u"Delete device from the database ?", None))
         self.lbl_id.setText(QCoreApplication.translate("Dialog", u"ID :", None))
         self.lbl_idresult.setText(QCoreApplication.translate("Dialog", u"lbl_showid", None))

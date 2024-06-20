@@ -102,7 +102,6 @@ class UpdateWindow(qtw.QWidget, Ui_createUpdate):
         new_username = self.uiu.le_username.text()
         new_password = self.uiu.le_password.text()
         new_location = self.uiu.le_location.text()
-        new_description = self.uiu.le_description.text()
         pte_description = self.uiu.pte_description.toPlainText()
 
         print(f"id = {id}")
@@ -146,10 +145,5 @@ class DeleteDialog(qtw.QDialog, Ui_Dialog):
         # SQL DELETE | Send message to reset the viewtable | Window closes automatically
         SqlDataConnection.delete_device(self, id)
         self.dialogmessage.emit("I am just another DIALOG window")
-
-
-
-
-
 
 

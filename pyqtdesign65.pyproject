@@ -9,7 +9,6 @@
         "deleteDialog.ui",
         "styles.css",
         "style_dracula.css",
-        "mystyle.css",
-        "testui.ui"
+        "mystyle.css"
     ]
 }

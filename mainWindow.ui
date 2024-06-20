@@ -10,8 +10,14 @@
     <height>409</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Noto Sans</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>CRUD Application</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
@@ -87,7 +93,6 @@ QScrollBar::handle {
     margin: 16px 1px 16px 1px;
     border-radius: 6px;
 }
-
 /* --------------------------------------- Status Bar  -----------------------------------*/
 QStatusBar {
         background: &quot;silver&quot;;
@@ -103,6 +108,28 @@ QSizeGrip {
     background-color: &quot;silver&quot;;
 }
 
+/* --------------------------------------- Menu Bar  -----------------------------------*/
+QMenuBar {
+	background-color: &quot;silver&quot;;  /* - Top strip Bar  -*/
+border-bottom: 2px solid &quot;gray&quot;;
+}
+QMenuBar::item:selected {
+	background: &quot;lightslategrey&quot;;
+	color: &quot;white&quot;;
+	font-weight:&quot;bold&quot;;
+}
+QMenuBar QMenu {
+    background-color: &quot;silver&quot;; /* - Drop down menu  -*/
+}
+QMenuBar QMenu::item:selected {
+background-color: &quot;slategrey&quot;;
+color: &quot;white&quot;;
+}
+ /* - 
+  -*/
+
+
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -110,7 +137,7 @@ QSizeGrip {
     <item>
      <widget class="QLabel" name="lbl_title">
       <property name="text">
-       <string>ui_mainWindow.py</string>
+       <string>Device Database Application</string>
       </property>
      </widget>
     </item>
@@ -164,6 +191,9 @@ QSizeGrip {
         <property name="text">
          <string>Create</string>
         </property>
+        <property name="icon">
+         <iconset theme="contact-new"/>
+        </property>
        </widget>
       </item>
       <item>
@@ -171,12 +201,18 @@ QSizeGrip {
         <property name="text">
          <string>Update</string>
         </property>
+        <property name="icon">
+         <iconset theme="edit-redo"/>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn_delete">
         <property name="text">
          <string>Delete</string>
+        </property>
+        <property name="icon">
+         <iconset theme="user-trash"/>
         </property>
        </widget>
       </item>
@@ -202,6 +238,9 @@ QSizeGrip {
         <property name="text">
          <string>Exit</string>
         </property>
+        <property name="icon">
+         <iconset theme="system-log-out"/>
+        </property>
        </widget>
       </item>
      </layout>
@@ -214,11 +253,134 @@ QSizeGrip {
      <x>0</x>
      <y>0</y>
      <width>729</width>
-     <height>18</height>
+     <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuDevice">
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Device</string>
+    </property>
+    <addaction name="actionCreate"/>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuApp">
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>App</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuDevice"/>
+   <addaction name="menuApp"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+    </font>
+   </property>
+  </widget>
+  <action name="actionCreate">
+   <property name="icon">
+    <iconset theme="list-add"/>
+   </property>
+   <property name="text">
+    <string>Create</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new device.</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset theme="edit-redo"/>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+   <property name="statusTip">
+    <string>Update the selected device.</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset theme="user-trash"/>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="statusTip">
+    <string>Delete the selected device.</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset theme="system-log-out"/>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Exit the application.</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

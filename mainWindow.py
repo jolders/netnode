@@ -35,6 +35,13 @@ class MainWindow(qtw.QMainWindow, Ui_MainWindow):
         except:
             print("view data error in first run - normal if unable to find database file")
 
+        # QMenuBar | QMenu
+        self.ui.actionCreate.triggered.connect(self.btn_create_clicked)
+        self.ui.actionUpdate.triggered.connect(lambda : self.btn_update_clicked(self.getSelectedDeviceID, self.hostname, self.ipaddress, self.username, self.password, self.location, self.description))
+        self.ui.actionDelete.triggered.connect(lambda : self.btn_delete_clicked(self.getSelectedDeviceID, self.hostname, self.ipaddress, self.username, self.password, self.location, self.description))
+        self.ui.actionExit.triggered.connect(self.close)
+
+
         # Buttons
         self.ui.btn_exit.clicked.connect(self.close)
         self.ui.btn_create.clicked.connect(self.btn_create_clicked)

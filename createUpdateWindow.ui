@@ -561,6 +561,9 @@ QScrollBar::handle {
        <property name="text">
         <string>Submit</string>
        </property>
+       <property name="icon">
+        <iconset theme="system-reboot"/>
+       </property>
       </widget>
      </item>
      <item>
@@ -599,6 +602,9 @@ height:12px;</string>
          </property>
          <property name="text">
           <string>Exit</string>
+         </property>
+         <property name="icon">
+          <iconset theme="system-log-out"/>
          </property>
         </widget>
        </item>

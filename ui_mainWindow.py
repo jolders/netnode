@@ -11,20 +11,25 @@
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
+    QCursor, QFont, QFontDatabase, QGradient,
+    QIcon, QImage, QKeySequence, QLinearGradient,
+    QPainter, QPalette, QPixmap, QRadialGradient,
+    QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QHBoxLayout, QHeaderView,
-    QLabel, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QSpacerItem, QStatusBar, QTableView,
-    QVBoxLayout, QWidget)
+    QLabel, QMainWindow, QMenu, QMenuBar,
+    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
+    QTableView, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(729, 409)
+        font = QFont()
+        font.setFamilies([u"Noto Sans"])
+        font.setPointSize(12)
+        MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"QMainWindow {\n"
 "	background-color: \"silver\";\n"
 "}\n"
@@ -100,7 +105,6 @@ class Ui_MainWindow(object):
 "    margin: 16px 1px 16px 1px;\n"
 "    border-radius: 6px;\n"
 "}\n"
-"\n"
 "/* --------------------------------------- Status Bar  -----------------------------------*/\n"
 "QStatusBar {\n"
 "        background: \"silver\";\n"
@@ -116,7 +120,54 @@ class Ui_MainWindow(object):
 "    background-color: \"silver\";\n"
 "}\n"
 "\n"
+"/* --------------------------------------- Menu Bar  -----------------------------------*/\n"
+"QMenuBar {\n"
+"	background-color: \"silver\";  /* - Top strip Bar  -*/\n"
+"border-bottom: 2px solid \"gray\";\n"
+"}\n"
+"QMenuBar::item:selected {\n"
+"	background: \"lightslategrey\";\n"
+"	color: \"white\";\n"
+"	font-weight:\"bold\";\n"
+"}\n"
+"QMenuBar QMenu {\n"
+"    background-color: \"silver\"; /* - Drop down menu  -*/\n"
+"}\n"
+"QMenuBar QMenu::item:selected {\n"
+"background-co"
+                        "lor: \"slategrey\";\n"
+"color: \"white\";\n"
+"}\n"
+" /* - \n"
+"  -*/\n"
+"\n"
+"\n"
+"\n"
 "")
+        self.actionCreate = QAction(MainWindow)
+        self.actionCreate.setObjectName(u"actionCreate")
+        icon = QIcon(QIcon.fromTheme(u"list-add"))
+        self.actionCreate.setIcon(icon)
+        font1 = QFont()
+        font1.setFamilies([u"Noto Sans"])
+        self.actionCreate.setFont(font1)
+        self.actionUpdate = QAction(MainWindow)
+        self.actionUpdate.setObjectName(u"actionUpdate")
+        icon1 = QIcon(QIcon.fromTheme(u"edit-redo"))
+        self.actionUpdate.setIcon(icon1)
+        self.actionUpdate.setFont(font1)
+        self.actionDelete = QAction(MainWindow)
+        self.actionDelete.setObjectName(u"actionDelete")
+        icon2 = QIcon(QIcon.fromTheme(u"user-trash"))
+        self.actionDelete.setIcon(icon2)
+        self.actionDelete.setFont(font1)
+        self.actionExit = QAction(MainWindow)
+        self.actionExit.setObjectName(u"actionExit")
+        icon3 = QIcon(QIcon.fromTheme(u"system-log-out"))
+        self.actionExit.setIcon(icon3)
+        self.actionExit.setFont(font1)
+        self.actionAbout = QAction(MainWindow)
+        self.actionAbout.setObjectName(u"actionAbout")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -145,16 +196,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(10, 20, 10, 20)
         self.btn_create = QPushButton(self.centralwidget)
         self.btn_create.setObjectName(u"btn_create")
+        icon4 = QIcon(QIcon.fromTheme(u"contact-new"))
+        self.btn_create.setIcon(icon4)
 
         self.horizontalLayout.addWidget(self.btn_create)
 
         self.btn_update = QPushButton(self.centralwidget)
         self.btn_update.setObjectName(u"btn_update")
+        self.btn_update.setIcon(icon1)
 
         self.horizontalLayout.addWidget(self.btn_update)
 
         self.btn_delete = QPushButton(self.centralwidget)
         self.btn_delete.setObjectName(u"btn_delete")
+        self.btn_delete.setIcon(icon2)
 
         self.horizontalLayout.addWidget(self.btn_delete)
 
@@ -169,6 +224,7 @@ class Ui_MainWindow(object):
 
         self.btn_exit = QPushButton(self.centralwidget)
         self.btn_exit.setObjectName(u"btn_exit")
+        self.btn_exit.setIcon(icon3)
 
         self.horizontalLayout_2.addWidget(self.btn_exit)
 
@@ -178,11 +234,31 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 729, 18))
+        self.menubar.setGeometry(QRect(0, 0, 729, 23))
+        font2 = QFont()
+        font2.setFamilies([u"Noto Sans"])
+        font2.setPointSize(10)
+        self.menubar.setFont(font2)
+        self.menuDevice = QMenu(self.menubar)
+        self.menuDevice.setObjectName(u"menuDevice")
+        self.menuDevice.setFont(font2)
+        self.menuApp = QMenu(self.menubar)
+        self.menuApp.setObjectName(u"menuApp")
+        self.menuApp.setFont(font2)
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
+        self.statusbar.setFont(font1)
         MainWindow.setStatusBar(self.statusbar)
+
+        self.menubar.addAction(self.menuDevice.menuAction())
+        self.menubar.addAction(self.menuApp.menuAction())
+        self.menuDevice.addAction(self.actionCreate)
+        self.menuDevice.addAction(self.actionUpdate)
+        self.menuDevice.addAction(self.actionDelete)
+        self.menuDevice.addSeparator()
+        self.menuDevice.addAction(self.actionExit)
+        self.menuApp.addAction(self.actionAbout)
 
         self.retranslateUi(MainWindow)
 
@@ -190,11 +266,42 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.lbl_title.setText(QCoreApplication.translate("MainWindow", u"ui_mainWindow.py", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"CRUD Application", None))
+        self.actionCreate.setText(QCoreApplication.translate("MainWindow", u"Create", None))
+#if QT_CONFIG(statustip)
+        self.actionCreate.setStatusTip(QCoreApplication.translate("MainWindow", u"Create a new device.", None))
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(shortcut)
+        self.actionCreate.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+V", None))
+#endif // QT_CONFIG(shortcut)
+        self.actionUpdate.setText(QCoreApplication.translate("MainWindow", u"Update", None))
+#if QT_CONFIG(statustip)
+        self.actionUpdate.setStatusTip(QCoreApplication.translate("MainWindow", u"Update the selected device.", None))
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(shortcut)
+        self.actionUpdate.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+U", None))
+#endif // QT_CONFIG(shortcut)
+        self.actionDelete.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
+#if QT_CONFIG(statustip)
+        self.actionDelete.setStatusTip(QCoreApplication.translate("MainWindow", u"Delete the selected device.", None))
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(shortcut)
+        self.actionDelete.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+D", None))
+#endif // QT_CONFIG(shortcut)
+        self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
+#if QT_CONFIG(statustip)
+        self.actionExit.setStatusTip(QCoreApplication.translate("MainWindow", u"Exit the application.", None))
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(shortcut)
+        self.actionExit.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+E", None))
+#endif // QT_CONFIG(shortcut)
+        self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.lbl_title.setText(QCoreApplication.translate("MainWindow", u"Device Database Application", None))
         self.btn_create.setText(QCoreApplication.translate("MainWindow", u"Create", None))
         self.btn_update.setText(QCoreApplication.translate("MainWindow", u"Update", None))
         self.btn_delete.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
+        self.menuDevice.setTitle(QCoreApplication.translate("MainWindow", u"Device", None))
+        self.menuApp.setTitle(QCoreApplication.translate("MainWindow", u"App", None))
     # retranslateUi
 

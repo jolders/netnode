@@ -334,6 +334,8 @@ class Ui_createUpdate(object):
 "    border-width: 0px;\n"
 "    font-weight:bold;\n"
 "}")
+        icon = QIcon(QIcon.fromTheme(u"system-reboot"))
+        self.btn_submit.setIcon(icon)
 
         self.verticalLayout_2.addWidget(self.btn_submit)
 
@@ -351,6 +353,8 @@ class Ui_createUpdate(object):
         self.btn_exit.setObjectName(u"btn_exit")
         self.btn_exit.setStyleSheet(u"width:100px;\n"
 "height:12px;")
+        icon1 = QIcon(QIcon.fromTheme(u"system-log-out"))
+        self.btn_exit.setIcon(icon1)
 
         self.horizontalLayout.addWidget(self.btn_exit)
 
