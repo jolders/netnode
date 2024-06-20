@@ -17,5 +17,5 @@ This is a starting point for how to intergrate Python, PySide6, SQLITE3, QT Crea
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://github.com/jolders/netnode/blob/main/netnode_screenshot.png" alt="screenshot" />
+  <img src="https://github.com/jolders/netnode/blob/main/Screenshot_netnode_main.png" alt="screenshot" />
 </div>
